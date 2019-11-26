@@ -2,7 +2,7 @@ import time
 import sys
 sys.path.append('./interface')
 sys.path.append('./db_fixture')
-import HTMLTestRunner
+import HTMLTestRunner_cn
 import unittest
 from db_fixture import test_data
 import pytest
@@ -17,8 +17,8 @@ if __name__ == "__main__":
     now = time.strftime("%Y-%m-%d %H_%M_%S")
     filename = './report/' + now + '_result.html'
     fp = open(filename, 'wb')
-    runner = HTMLTestRunner.HTMLTestRunner(stream=fp, description=u'运行环境：MySQL(PyMySQL), Requests, unittest ',
-                                           title=u'发布会签到系统接口自动化测试')
+    runner = HTMLTestRunner_cn.HTMLTestRunner(stream=fp, description=u'运行环境：MySQL(PyMySQL), Requests, unittest ',
+                                              title=u'发布会签到系统接口自动化测试')
     runner.run(discover)
     fp.close()
 

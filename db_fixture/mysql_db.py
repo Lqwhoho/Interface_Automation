@@ -29,7 +29,7 @@ class DB:
         try:
             # 连接数据库
             self.conn = pymysql.connect(host=host, user=user, password=password, db=db,
-                                charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
+                                        charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
         except pymysql.err.OperationalError as e:
             print("Mysql Error %d:%s" % (e.args[0], e.args[1]))
 
@@ -52,7 +52,6 @@ class DB:
             self.conn.rollback()
             print('删除表数据错误')
         '''
-
 
     # 插入表数据
     def insert(self, table_name, table_data):
